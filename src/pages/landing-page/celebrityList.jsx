@@ -4,9 +4,12 @@ import CelebrityCard from "./celebrityCard";
 
 const useStyles = makeStyles({
   root: {
-    diplay: "flex",
+    display: "flex",
+    flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
+    width: "60%",
+    margin: "auto"
   }
 });
 
@@ -14,7 +17,7 @@ const CelebrityList = ({ celebrityList }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.useStyles}>
+    <div className={classes.root}>
       {celebrityList.map(celebrity => (
         <CelebrityCard celebrityData={celebrity} />
       ))}

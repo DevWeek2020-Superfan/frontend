@@ -3,18 +3,10 @@ import { useGlobalState, useGlobalMutation } from "../utils/container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
 import IndexCard from "./index/card";
-import LandingPage from "./landing-page/landingPage";
+import Celebritylist from "./landing-page/celebrityList";
 
 const useStyles = makeStyles(() => ({
-  container: {
-    height: "100%",
-    width: "100%",
-    minWidth: 800,
-    minHeight: 600,
-    boxSizing: "content-box",
-    display: "flex",
-    justifyContent: "center"
-  }
+  container: {}
 }));
 
 const Index = () => {
@@ -28,11 +20,9 @@ const Index = () => {
     }
   }, [stateCtx.loading, mutationCtx]);
 
-  return (
-    <Container maxWidth="sm" className={classes.container}>
-      <LandingPage />
-    </Container>
-  );
+  const mockCelebritylist = [{}, {}, {}, {}];
+
+  return <Celebritylist celebrityList={mockCelebritylist} />;
 };
 
 export default Index;

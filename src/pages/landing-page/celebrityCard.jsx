@@ -13,7 +13,7 @@ const DEFAULT_IMAGE_URL =
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345
+    width: "200px"
   }
 });
 
@@ -26,23 +26,23 @@ const CelebrityCard = ({ celebrityData }) => {
         <CardMedia
           component="img"
           alt="Celebrity image"
-          height="140"
+          height="200"
+          width="200"
           image={celebrityData?.imageUrl || DEFAULT_IMAGE_URL}
           title="Celebrity Image"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {celebrityData?.name || "James & Agatha"}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {celebrityData?.description || "James is single "}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Profile
         </Button>
         <Button size="small" color="primary">
           Learn More
